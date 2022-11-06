@@ -1,5 +1,7 @@
-import styles from "./App.css";
+import "./App.css";
+
 import React from "react";
+
 function App() {
   const [displayTime, setDisplayTime] = React.useState(25 * 60);
   const formatTime = (time) => {
@@ -14,7 +16,26 @@ function App() {
   };
   return (
     <div>
+      <Length
+        title={"break length"}
+        changeTime={null}
+        type={"break"}
+        time={null}
+        formatTime={formatTime}
+      />
       <h1>{formatTime(displayTime)}</h1>
+    </div>
+  );
+}
+function Length({ title, changeTime, type, time, formatTime }) {
+  return (
+    <div>
+      <h3>{title}</h3>
+      <div className="time-sets">
+        <button className="btn-small deep-purple lighten-2">
+          <i className="material-icons">-</i>
+        </button>
+      </div>
     </div>
   );
 }
