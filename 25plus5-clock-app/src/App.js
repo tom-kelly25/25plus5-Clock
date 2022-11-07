@@ -4,6 +4,8 @@ import React from "react";
 
 function App() {
   const [displayTime, setDisplayTime] = React.useState(25 * 60);
+  const [breakTime, setBreakTime] = React.useState(5 * 60);
+
   const formatTime = (time) => {
     let minutes = Math.floor(time / 60);
     let seconds = time % 60;
@@ -20,7 +22,7 @@ function App() {
         title={"break length"}
         changeTime={null}
         type={"break"}
-        time={null}
+        time={breakTime}
         formatTime={formatTime}
       />
       <h1>{formatTime(displayTime)}</h1>
@@ -34,6 +36,11 @@ function Length({ title, changeTime, type, time, formatTime }) {
       <div className="time-sets">
         <button className="btn-small deep-purple lighten-2">
           <i className="material-icons">-</i>
+        </button>
+        <h3>{formatTime(time)}</h3>
+        <button className="btn-small deep-purple lighten-2">
+          <i className="material-icons">+</i>
+          <h2>test</h2>
         </button>
       </div>
     </div>
