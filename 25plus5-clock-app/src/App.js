@@ -41,6 +41,7 @@ function Length({ title, changeTime, type, time, formatTime }) {
         <h3>{formatTime(time)}</h3>
         <button className="btn-small deep-purple lighten-2">
           <i className="material-icons">+</i>
+          <h2>test</h2>
         </button>
       </div>
     </div>
