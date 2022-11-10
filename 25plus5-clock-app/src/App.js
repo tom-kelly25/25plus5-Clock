@@ -45,7 +45,10 @@ function Length({ title, changeTime, type, time, formatTime }) {
           <i className="material-icons">-</i>
         </button>
         <h3>{formatTime(time)}</h3>
-        <button className="btn-small deep-purple lighten-2">
+        <button
+          className="btn-small deep-purple lighten-2"
+          onClick={() => changeTime(60, type)}
+        >
           <i className="material-icons">+</i>
         </button>
       </div>
