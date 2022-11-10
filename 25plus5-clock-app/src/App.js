@@ -16,11 +16,15 @@ function App() {
       (seconds < 10 ? "0" + seconds : seconds)
     );
   };
+  const changeTime = (amount, type) => {
+    if (type == "break") setBreakTime((prev) => prev + amount);
+  };
+
   return (
     <div>
       <Length
         title={"break length"}
-        changeTime={null}
+        changeTime={changeTime}
         type={"break"}
         time={breakTime}
         formatTime={formatTime}
@@ -34,13 +38,15 @@ function Length({ title, changeTime, type, time, formatTime }) {
     <div>
       <h3>{title}</h3>
       <div className="time-sets">
-        <button className="btn-small deep-purple lighten-2">
+        <button
+          className="btn-small deep-purple lighten-2"
+          onClick={() => changeTime(-60, type)}
+        >
           <i className="material-icons">-</i>
         </button>
         <h3>{formatTime(time)}</h3>
         <button className="btn-small deep-purple lighten-2">
           <i className="material-icons">+</i>
-          <h2>test</h2>
         </button>
       </div>
     </div>
