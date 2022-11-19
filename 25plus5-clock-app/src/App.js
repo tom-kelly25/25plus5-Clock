@@ -6,6 +6,7 @@ function App() {
   const [displayTime, setDisplayTime] = React.useState(25 * 60);
   const [breakTime, setBreakTime] = React.useState(5 * 60);
   const [sessionTime, setsessionTime] = React.useState(25 * 60);
+  const [timerOn, setTimerOn] = React.useState(false);
 
   const formatTime = (time) => {
     let minutes = Math.floor(time / 60);
@@ -28,6 +29,9 @@ function App() {
         return;
       }
       setsessionTime((prev) => prev + amount);
+      if (!timerOn) {
+        setDisplayTime(sessionTime + amount);
+      }
     }
   };
 
