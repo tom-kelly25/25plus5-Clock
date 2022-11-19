@@ -36,21 +36,24 @@ function App() {
   };
 
   return (
-    <div>
-      <Length
-        title={"break length"}
-        changeTime={changeTime}
-        type={"break"}
-        time={breakTime}
-        formatTime={formatTime}
-      />
-      <Length
-        title={"session length"}
-        changeTime={changeTime}
-        type={"session"}
-        time={sessionTime}
-        formatTime={formatTime}
-      />
+    <div className="center-align">
+      <h1>Pomodro Clock</h1>
+      <div className="double_container">
+        <Length
+          title={"break length"}
+          changeTime={changeTime}
+          type={"break"}
+          time={breakTime}
+          formatTime={formatTime}
+        />
+        <Length
+          title={"session length"}
+          changeTime={changeTime}
+          type={"session"}
+          time={sessionTime}
+          formatTime={formatTime}
+        />
+      </div>
       <h1>{formatTime(displayTime)}</h1>
     </div>
   );
