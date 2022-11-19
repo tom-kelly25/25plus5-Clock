@@ -25,7 +25,7 @@ function App() {
       }
       setBreakTime((prev) => prev + amount);
     } else {
-      if (breakTime <= 60 && amount < 0) {
+      if (sessionTime <= 60 && amount < 0) {
         return;
       }
       setsessionTime((prev) => prev + amount);
@@ -71,20 +71,21 @@ function App() {
       <h1>Pomodro Clock</h1>
       <div className="double_container">
         <Length
-          title={"break length"}
+          title={"Break length"}
           changeTime={changeTime}
           type={"break"}
           time={breakTime}
           formatTime={formatTime}
         />
         <Length
-          title={"session length"}
+          title={"Session length"}
           changeTime={changeTime}
           type={"session"}
           time={sessionTime}
           formatTime={formatTime}
         />
       </div>
+      <h3>{onBreak ? "Break" : "Session"}</h3>
       <h1>{formatTime(displayTime)}</h1>
       <button className="btn-large deep-purple lighten-2" onClick={controlTime}>
         {timerOn ? (
